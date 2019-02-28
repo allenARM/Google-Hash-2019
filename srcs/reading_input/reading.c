@@ -13,11 +13,12 @@ void	check_for_h_and_v(t_info *info, int i, char *line)
 		error("Wrong input of horizontal or vertial photo");
 }
 
-void	check_for_correct_photo_pos(t_info *info, int i, char *line)
+void	check_for_num_of_tags(t_info *info, int i, char *line)
 {
-	info->input[i]->position = ft_atoi(&line[2]);
-	if (info->input[i]->position < 0 && info->input[i]->position > 100000)
-		error("too many or too few photos");
+	info->input[i]->number_of_tags = ft_atoi(&line[1]);
+	if (info->input[i]->number_of_tags < 0\
+		&& info->input[i]->number_of_tags > 100000)
+		error("too many or too few tags");
 }
 
 void	reading(t_info *info)
@@ -34,7 +35,7 @@ void	reading(t_info *info)
 	{
 		check_for_h_and_v(info, i, line);
 		check_for_correct_photo_pos(info, i, line);
-		check_tags(info, i, line);
+		info->input[i]->tags = ft_split(&line[3]);
 		i++;
 		ft_strdel(&line);
 	}
