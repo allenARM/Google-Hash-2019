@@ -10,6 +10,7 @@ t_list	*add_list(t_list *list, char *data)
 		list = malloc(sizeof(t_list));
 		list->tag = data;
 		list->next = NULL;
+		return (list);
 	}
 	head = list;
 	while (list->next)
