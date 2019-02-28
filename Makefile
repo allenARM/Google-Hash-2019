@@ -6,8 +6,9 @@ SRCS = 	srcs/main.c \
 		srcs/struct_operations/t_image.c \
 		srcs/struct_operations/t_slide.c \
 		srcs/algorithm/algorithm.c \
+		srcs/algorithm/unique_tags.c \
 		srcs/algorithm/simple_slow_check.c 
-		
+
 LIBFT = -L ./libft -lft
 
 OBJ		=	$(SRCS:.c=.o)

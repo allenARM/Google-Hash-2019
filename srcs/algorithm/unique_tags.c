@@ -53,7 +53,7 @@ void	clean_list(t_list *list)
 {
 	if (list->next)
 		clean_list(list->next);
-	ft_strdel(list->tag);
+	ft_strdel(&list->tag);
 	free(list);
 }
 
@@ -77,7 +77,7 @@ char	**uniqie_tags(t_image *one, t_image *two)
 
 	i = 0;
 	while (one->tags[i])
-		t_list = add_list(list, one->tags[i++]);
+		list = add_list(list, one->tags[i++]);
 
 	i = 0;
 	while (two->tags[i])
@@ -97,4 +97,5 @@ char	**uniqie_tags(t_image *one, t_image *two)
 	}
 	tags[i] = NULL;
 	clean_list(head);
+	return (tags);
 }
