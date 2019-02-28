@@ -1,8 +1,7 @@
-
 #ifndef INCLUDE_H
 #define INCLUDE_H
 
-#include "libft/libft.h"
+#include "../libft/libft.h"
 
 
 typedef struct	s_image
@@ -22,5 +21,7 @@ typedef	struct	s_info
 
 void			initialize_images(t_info *info);
 void			check_for_number_of_images(char *line, t_info *info);
+void			reading(t_info *info);
+void			error(char *reason);
 
 #endif

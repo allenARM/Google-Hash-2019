@@ -1,6 +1,9 @@
 INCLUDES = -I includes -I libft
 
 SRCS = 	srcs/main.c \
+		srcs/reading_input/check_for_number_of_images.c \
+		srcs/reading_input/reading.c \
+		srcs/reading_input/initialization.c
 
 LIBFT = -L ./libft -lft
 
