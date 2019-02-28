@@ -19,7 +19,7 @@ void	check_for_num_of_tags(t_info *info, int i, char *line)
 	if (info->input[i]->number_of_tags < 0\
 		&& info->input[i]->number_of_tags > 100000)
 		error("too many or too few tags");
-	if (line[1])
+	if (line[1] && line[2])
 		error("No number of tags");
 }
 
