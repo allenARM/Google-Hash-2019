@@ -3,7 +3,8 @@ INCLUDES = -I includes -I libft
 SRCS = 	srcs/main.c \
 		srcs/reading_input/check_for_number_of_images.c \
 		srcs/reading_input/reading.c \
-		srcs/reading_input/initialization.c
+		srcs/struct_operations/t_image.c \
+		srcs/struct_operations/t_slide.c 
 
 LIBFT = -L ./libft -lft
 
