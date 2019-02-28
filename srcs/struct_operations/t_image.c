@@ -18,3 +18,36 @@ void			initialize_images(t_info *info)
 	}
 	info->input[i] = NULL;
 }
+
+t_image		**sort_images(t_image **list)
+{
+	int		i;
+	int		tmp;
+	char	**tmp1;
+
+	i = 0;
+	while (list[i] && list[i + 1])
+	{
+		if (list[i]->number_of_tags > list[i + 1]->number_of_tags)
+		{
+			tmp = list[i]->number_of_tags;
+			list[i]->number_of_tags = list[i + 1]->number_of_tags;
+			list[i + 1]->number_of_tags = tmp;
+
+			tmp = list[i]->position;
+			list[i]->position = list[i + 1]->position;
+			list[i + 1]->position = tmp;
+
+			tmp = list[i]->number_of_tags;
+			list[i]->number_of_tags = list[i + 1]->number_of_tags;
+			list[i + 1]->number_of_tags = tmp;
+
+			tmp1 = list[i]->tags;
+			list[i]->tags = list[i + 1]->tags;
+			list[i + 1]->tags = tmp1;			
+		}
+		else
+			++i;
+	}
+	return (list);
+}
