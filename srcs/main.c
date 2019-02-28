@@ -1,8 +1,9 @@
 #include "include.h"
 
-int			main()
+int				main()
 {
 	t_info		info;
 
-	initialize_images(input);
+	ft_bzero(&info, sizeof(t_info));
+	reading(&info);
 }
