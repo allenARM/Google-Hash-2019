@@ -18,7 +18,7 @@ void	check_for_num_of_tags(t_info *info, int i, char *line)
 	info->input[i]->number_of_tags = ft_atoi(&line[1]);
 	if (info->input[i]->number_of_tags < 0\
 		&& info->input[i]->number_of_tags > 100000)
-		error("too many or too few photos");
+		error("too many or too few tags");
 }
 
 void	check_tags(t_info *info, int i, char *line)
