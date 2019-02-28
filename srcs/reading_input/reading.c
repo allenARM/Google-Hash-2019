@@ -16,11 +16,27 @@ void	check_for_h_and_v(t_info *info, int i, char *line)
 void	check_for_num_of_tags(t_info *info, int i, char *line)
 {
 	info->input[i]->number_of_tags = ft_atoi(&line[1]);
-	if (info->input[i]->number_of_tags < 0\
-		&& info->input[i]->number_of_tags > 100000)
+	if (info->input[i]->number_of_tags < 1\
+		&& info->input[i]->number_of_tags > 100)
 		error("Invalid number of tags");
 	if (!line[1] || !line[2])
 		error("No number of tags");
+}
+
+void	check_for_letters_and_digits(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if ((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'a' && s[i] <= 'z'))
+			i++;
+		else
+			error("wrong tag name");
+	}
+	if (i > 10)
+		error("leghth of tag too long");
 }
 
 void	check_for_tags(t_info *info, int i)
@@ -29,7 +45,7 @@ void	check_for_tags(t_info *info, int i)
 
 	j = 0;
 	while (info->input[i]->tags[j])
-		j++;
+		check_for_letters_and_digits(info->input[i]->tags[j++]);
 	if (j != info->input[i]->number_of_tags)
 		error("Number of tags does not match your input");
 }
