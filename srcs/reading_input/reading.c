@@ -26,12 +26,12 @@ void	reading(t_info *info)
 	char	*line;
 	int		i;
 
-	get_next_line(1, &line);
+	get_next_line(0, &line);
 	check_for_number_of_images(line, info);
 	ft_strdel(&line);
 
 	i = 0;
-	while (get_next_line(1, &line) > 0)
+	while (get_next_line(0, &line) > 0)
 	{
 		check_for_h_and_v(info, i, line);
 		check_for_num_of_tags(info, i, line);
