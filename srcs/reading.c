@@ -6,17 +6,15 @@ void	reading(t_info *info)
 	int		i;
 
 	get_next_line(1, &line);
-	info->num_of_images = ft_atoi(line);
-	ft_strdel(line);
-	if (info->num_of_images <= 100000)
-		info->input = (malloc(sizeof(t_image) * info->num_of_images + 1);
-	else
-		make_exit() // write exit function;
-
+	check_for_number_of_images();
 	i = 0;
 
 	while (get_next_line(1, &line) > 0)
 	{
-		if (!)
+		if (line[0] == 'H' || line[0] == 'V')
+		{
+			if (line == 0)
+		}
+		ft_strdel(line);
 	}
 }
