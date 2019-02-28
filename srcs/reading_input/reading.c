@@ -19,6 +19,8 @@ void	check_for_num_of_tags(t_info *info, int i, char *line)
 	if (info->input[i]->number_of_tags < 0\
 		&& info->input[i]->number_of_tags > 100000)
 		error("too many or too few tags");
+	if (&line[1])
+		error("No number of tags");
 }
 
 void	reading(t_info *info)
@@ -37,6 +39,8 @@ void	reading(t_info *info)
 		check_for_num_of_tags(info, i, line);
 		info->input[i]->tags = ft_strsplit(&line[3], ' ');
 		info->input[i]->index = i;
+		if (!ft_strcmp(line, ""))
+			break ;
 		i++;
 		ft_strdel(&line);
 	}
