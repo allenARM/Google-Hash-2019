@@ -21,12 +21,6 @@ void	check_for_num_of_tags(t_info *info, int i, char *line)
 		error("too many or too few tags");
 }
 
-void	check_tags(t_info *info, int i, char *line)
-{
-	info->input[i]->tags = ft_split(&line[3]);
-
-}
-
 void	reading(t_info *info)
 {
 	char	*line;
@@ -41,7 +35,7 @@ void	reading(t_info *info)
 	{
 		check_for_h_and_v(info, i, line);
 		check_for_correct_photo_pos(info, i, line);
-		check_tags(info, i, line);
+		info->input[i]->tags = ft_split(&line[3]);
 		i++;
 		ft_strdel(&line);
 	}
