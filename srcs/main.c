@@ -42,4 +42,5 @@ int				main()
 	ft_bzero(&info, sizeof(t_info));
 	reading(&info);
 	// print_info(&info);
+	algorithm(&info);
 }

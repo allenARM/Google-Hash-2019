@@ -4,8 +4,10 @@ SRCS = 	srcs/main.c \
 		srcs/reading_input/check_for_number_of_images.c \
 		srcs/reading_input/reading.c \
 		srcs/struct_operations/t_image.c \
-		srcs/struct_operations/t_slide.c 
-
+		srcs/struct_operations/t_slide.c \
+		srcs/algorithm/algorithm.c \
+		srcs/algorithm/simple_slow_check.c 
+		
 LIBFT = -L ./libft -lft
 
 OBJ		=	$(SRCS:.c=.o)

@@ -14,7 +14,9 @@ typedef struct		s_image
 
 typedef struct		s_slide
 {
-
+	int				image1;
+	int				image2;
+	char			**final_tags;
 	struct s_slide	*next;
 }					t_slide;
 
@@ -29,5 +31,10 @@ void				initialize_images(t_info *info);
 void				check_for_number_of_images(char *line, t_info *info);
 void				reading(t_info *info);
 void				error(char *reason);
+int					size_slide(t_slide *list);
+t_slide				*add_slide(t_slide *list, t_image *one, t_image *two);
+void				algorithm(t_info *info);
+int					simple_slow_check(char **one, char **two);
+
 
 #endif
