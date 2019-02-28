@@ -41,6 +41,7 @@ int				main()
 
 	ft_bzero(&info, sizeof(t_info));
 	reading(&info);
+	info.input = sort_images(info.input);
 	print_info(&info);
 	algorithm(&info);
 }

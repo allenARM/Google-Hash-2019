@@ -2,18 +2,20 @@
 
 void		algorithm(t_info *info)
 {
-	info->output = NULL;
-	info->output = add_slide(info->output, info->input[1], info->input[2]);
+	t_images_vertical		*vertical_to_horizontal;
+
+	vertical_to_horizontal = create_list_of_verticals(info);
 
 	int		i;
-	while (info->output)
+	while (vertical_to_horizontal)
 	{
 		i = 0;
-		while (info->output->final_tags[i])
-			ft_printf("%s->", info->output->final_tags[i++]);
-		ft_printf("NULL\n");
-		info->output = info->output->next;
+		ft_printf("Index %d & Index %d\n", vertical_to_horizontal->index1, vertical_to_horizontal->index2);
+		while (vertical_to_horizontal->tags[i])
+			ft_printf("	-%s\n", vertical_to_horizontal->tags[i]);
+		vertical_to_horizontal = vertical_to_horizontal->next;
 	}
 
-	ft_printf("least thing = %d\n", simple_slow_check(info->input[2]->tags, info->input[3]->tags));
+	info->output = NULL;
+	
 }

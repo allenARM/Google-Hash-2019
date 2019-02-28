@@ -4,10 +4,13 @@ SRCS = 	srcs/main.c \
 		srcs/reading_input/check_for_number_of_images.c \
 		srcs/reading_input/reading.c \
 		srcs/struct_operations/t_image.c \
+		srcs/struct_operations/t_images_vertical.c \
 		srcs/struct_operations/t_slide.c \
+		srcs/struct_operations/array.c \
 		srcs/algorithm/algorithm.c \
 		srcs/algorithm/unique_tags.c \
-		srcs/algorithm/simple_slow_check.c 
+		srcs/algorithm/simple_slow_check.c \
+		srcs/algorithm/create_list_of_verticals.c
 
 LIBFT = -L ./libft -lft
 
