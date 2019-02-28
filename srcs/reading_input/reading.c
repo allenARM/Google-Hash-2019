@@ -45,4 +45,6 @@ void	reading(t_info *info)
 		i++;
 		ft_strdel(&line);
 	}
+	if (info->number_of_photos != i)
+		error("The number of photos doesn't match the quantity of those");
 }

@@ -2,7 +2,7 @@
 
 void			error(char *reason)
 {
-	ft_printf("Error: %s\n", reason);
+	ft_printf("%sError: %s\n", CRED, reason);
 	exit(0);
 }
 
