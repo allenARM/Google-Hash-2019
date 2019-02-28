@@ -34,8 +34,8 @@ void	reading(t_info *info)
 	while (get_next_line(1, &line) > 0)
 	{
 		check_for_h_and_v(info, i, line);
-		check_for_correct_photo_pos(info, i, line);
-		info->input[i]->tags = ft_split(&line[3]);
+		check_for_num_of_tags(info, i, line);
+		info->input[i]->tags = ft_strsplit(&line[3], ' ');
 		i++;
 		ft_strdel(&line);
 	}
