@@ -48,6 +48,8 @@ void	reading(t_info *info)
 	{
 		if (!ft_strcmp(line, ""))
 			break ;
+		if (info->number_of_photos == i)
+			error("The number of photos doesn't match the quantity of those");
 		check_for_h_and_v(info, i, line);
 		check_for_num_of_tags(info, i, line);
 		if (!(info->input[i]->tags = ft_strsplit(&line[3], ' ')))
