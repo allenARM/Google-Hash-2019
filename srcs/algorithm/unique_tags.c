@@ -49,15 +49,7 @@ int		check_tag(t_list *list, char *str)
 	return (0);
 }
 
-void	clean_list(t_list *list)
-{
-	if (list->next)
-		clean_list(list->next);
-	ft_strdel(&list->tag);
-	free(list);
-}
-
-char	**uniqie_tags(t_image *one, t_image *two)
+char	**unique_tags(t_image *one, t_image *two)
 {
 	char	**tags;
 	t_list	*list;
@@ -96,6 +88,5 @@ char	**uniqie_tags(t_image *one, t_image *two)
 		i++;
 	}
 	tags[i] = NULL;
-	clean_list(head);
 	return (tags);
 }

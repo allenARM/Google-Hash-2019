@@ -41,6 +41,6 @@ int					size_slide(t_slide *list);
 t_slide				*add_slide(t_slide *list, t_image *one, t_image *two);
 void				algorithm(t_info *info);
 int					simple_slow_check(char **one, char **two);
-
+char				**unique_tags(t_image *one, t_image *two);
 
 #endif

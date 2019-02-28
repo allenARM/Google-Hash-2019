@@ -10,14 +10,15 @@ t_slide		*add_slide(t_slide *list, t_image *one, t_image *two)
 		list = (t_slide *)malloc(sizeof(t_slide));
 		list->image1 = one->index;
 		list->image2 = two->index;
-		// list->final_tags = 
+		list->next = NULL;
+		list->final_tags = unique_tags(one, two);
 		return (list);
 	}
 	begin = list;
 	new = (t_slide *)malloc(sizeof(t_slide));
 	new->image1 = one->index;
 	new->image2 = two->index;
-	// list->final_tags = 
+	list->final_tags = unique_tags(one, two);
 	while (list->next)
 		list = list->next;
 	list->next = new;
