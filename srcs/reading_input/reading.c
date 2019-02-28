@@ -36,6 +36,7 @@ void	reading(t_info *info)
 		check_for_h_and_v(info, i, line);
 		check_for_num_of_tags(info, i, line);
 		info->input[i]->tags = ft_strsplit(&line[3], ' ');
+		info->input[i]->index = i;
 		i++;
 		ft_strdel(&line);
 	}
